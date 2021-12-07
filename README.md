@@ -1,25 +1,25 @@
-#MockProxy
+# MockProxy
 MockProxy is HTTP proxy server base on [LittleProxy](https://github.com/adamfisk/LittleProxy) with web application interface base on [Spring Boot](https://github.com/spring-projects/spring-boot). 
 
 Can be used as a proxy for some requests and a mock for other requests at the same time.
 
-###Minimal requirements for run application:
+### Minimal requirements for run application:
 
 - Java 1.8
 - MongoDB server version 4.4.
 
-###In `application.properties` you can configure:
+### In `application.properties` you can configure:
 
 - proxy server port
 - web app port 
 - connection to MongoDB
 - change user/password to access for web app
 
-###Build and run application:
+### Build and run application:
 
 - `./gradlew  bootRun`
 
-###Usage
+### Usage
 
 - CURL
 ```
@@ -53,7 +53,7 @@ public class JavaClientExample {
         // Without certificate verification
         // trustAllSetUp();
  
-        String realServiceUrl = "https://mockproxy.test.it.loc/test-service/json/my-service";
+        String realServiceUrl = "https://mockproxyURL/test-service/json/my-service";
  
         URL url = new URL(realServiceUrl);
  
@@ -151,7 +151,7 @@ public class ApacheClientExample {
         // without certificate verification
         // CloseableHttpClient client = trustAllHttpClient();
  
-        String realServiceUrl = "https://mockproxy.test.it.loc/test-service/json/my-service";
+        String realServiceUrl = "https://mockproxyURL/test-service/json/my-service";
  
         HttpGet httpGet = new HttpGet(realServiceUrl);
         // Header for identify client configuration on proxy server, required for mock response
