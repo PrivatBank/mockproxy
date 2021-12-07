@@ -1,0 +1,52 @@
+<div class="conteiner-fluid conteiner-my">
+  <div class="new-project edit-form ">
+    <div class="container-fluid common-card">
+      <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <h4>{{selectedProject?.id ? 'Update':'Create'}} project</h4>
+          <hr>
+          <div class="row mr-0 ml-0">
+            <div class="col-5">
+              <mat-form-field class="input-width">
+                <input matInput [placeholder]="'name'" formControlName="name" required>
+                <mat-error *ngIf="name.hasError('required')">
+                  emty field is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row mr-0 ml-0">
+            <div class="col-7">
+              <mat-form-field class="input-width">
+                <textarea rows="6" matInput [placeholder]="'description'" formControlName="description" ></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row mr-0 ml-0" *ngIf="selectedProject?.id">
+            <div class="col-2">
+              <h4>Token key: </h4>
+            </div>
+            <div class="col-4">
+                {{selectedProject?.id}}
+            </div>
+          </div>
+        </div>
+
+        <div class="row mr-0 ml-0 justify-content-end">
+          <div class="col-4 save-buttons-place">
+            <button mat-button (click)="cancel(); false">
+              Cancel
+            </button>
+            <button #submitButton [disabled]="!editForm.valid" type="submit" mat-flat-button color="primary">
+              {{selectedProject?.id ? 'Update':'Create'}}
+            </button>
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

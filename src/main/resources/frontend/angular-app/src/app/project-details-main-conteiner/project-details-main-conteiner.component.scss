@@ -1,0 +1,101 @@
+$menu-top-fone: #455a64;
+$menu-fone: #495057;
+$text-color: #ffffff;
+
+.sidenav-container {
+  height: 100vh;
+  background: #f4f4f4;
+  border: 1px solid $menu-fone;
+}
+.mat-sidenav {
+  width: 200px;
+}
+.mat-divider {
+  margin-right: 1em;
+  margin-left: 1em;
+  border-top-color: rgba(255, 255, 255, 0.1);
+  margin-top: calc(0.5em - 1px);
+}
+.logo {
+  height: 22px;
+}
+
+.my-sidenav{
+  background: $menu-fone;
+  color: $text-color;
+  a {
+    color: $text-color;
+    &.active-list-item {
+      background-color: rgba(135, 245, 201, 0.2) !important;
+    }
+  }
+
+  .topnav{
+    margin-bottom: 15px;
+
+    .menu{
+      display: inline-block;
+      width: 18px;
+      height: 20px;
+      background-size: auto 100%;
+      vertical-align: middle;
+    }
+
+
+    .create{
+      color: #448aff;
+    }
+  }
+  .bottom-nav {
+    color: $text-color !important;
+  }
+
+  .side-icon{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-size: auto 100%;
+    vertical-align: middle;
+  }
+
+
+  .open-arrow.rotate180 {
+    //transform: rotate(180deg);
+    //transform-origin: center;
+    transition: 0.5s;
+    transform: rotate3d(0, 1, 0, 180deg);
+    //transform: rotate(-180deg);
+  }
+  //@keyframes rotation {
+  //  from {
+  //    -webkit-transform: rotate(0deg);
+  //  }
+  //  to {
+  //    -webkit-transform: rotate(180deg);
+  //  }
+  //}
+}
+
+.my-sidenav-open {
+  width: 256px;
+}
+
+//.opened-sidenav-content{
+//  margin-left: 196px;
+//  -webkit-transition: width 2s;
+//  transition: width 1s;
+//}
+::ng-deep {
+  .mat-drawer-inner-container {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+
+.navbar ol.breadcrumb {
+  margin-bottom: 0rem;
+}
+span {
+  padding-left: 16px;
+  padding-right: 90px;
+}

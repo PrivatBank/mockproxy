@@ -1,0 +1,84 @@
+.conteiner-my{
+  padding: 2rem 20rem;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.input-width {
+  width: 100%;
+}
+.input-width-user{
+  width: 90%;
+}
+.button-width {
+  width: 100%;
+  text-align: start;
+
+  span.icon {
+    font-size: 1em;
+    margin-right: 4px;
+    vertical-align: bottom;
+  }
+}
+
+.info{
+  height: 22px;
+}
+
+.new-project {
+  background-color: var(--main-background);
+  padding: 1.5rem !important;
+
+  .common-card {
+    padding-right: 0rem;
+    padding-left: 0rem;
+  }
+  .flex-row-conteiner{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    h6{
+      margin-right: 20px;
+    }
+  }
+
+  .col-4 {
+    flex: auto;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+
+    .form-group {
+      &:first-child {
+        margin-bottom: 2em;
+      }
+
+
+      mat-form-field {
+        div.mat-form-field-wrapper {
+          padding-bottom: 1.5rem !important;
+        }
+      }
+
+
+
+    }
+  }
+  .help-icon {
+    cursor: pointer;
+    opacity: 0.5;
+    vertical-align: bottom;
+  }
+  .help-icon:hover {
+    opacity: 0.6;
+  }
+  .save-buttons-place {
+    display: flex;
+    button {
+      margin-right: 2em;
+      width: 168px;
+      line-height: 48px;
+    }
+  }
+
+}

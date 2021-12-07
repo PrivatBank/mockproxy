@@ -1,0 +1,128 @@
+<div class="conteiner-fluid conteiner-my">
+  <div class="new-project edit-form ">
+    <div class="container-fluid common-card">
+      <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <h4>{{selectedRule?.id ? 'Update':'Create'}} rule</h4>
+          <hr>
+          <div class="row mr-0 ml-0">
+            <div class="col-8">
+              <mat-form-field class="input-width">
+                <input matInput [placeholder]="'name'" formControlName="name" required>
+                <mat-error *ngIf="name.hasError('required')">
+                  emty field is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row mr-0 ml-0">
+            <div class="col-8">
+              <mat-form-field class="input-width">
+                <textarea rows="6" matInput [placeholder]="'description'" formControlName="description" ></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row mr-0 ml-0">
+            <div class="col-8">
+              <mat-slide-toggle formControlName="state">
+                <span class="ml-2 mt-2">Actite</span>
+              </mat-slide-toggle>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="form-group">
+          <h4>Scheme accordance</h4>
+
+          <div class="row mr-0 ml-0">
+            <div class="col-2">
+              <mat-form-field class="input-width">
+                <mat-select [formControl]="requestMethod" [placeholder]="'Request method'" name="requestMethod" required>
+                  <mat-option value="GET">GET</mat-option>
+                  <mat-option value="POST">POST</mat-option>
+                  <mat-option value="PUT">PUT</mat-option>
+                  <mat-option value="DELETE">DELETE</mat-option>
+                </mat-select>
+
+                <mat-error *ngIf="requestMethod.hasError('required')">
+                  emty field is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+
+          <div class="row mr-0 ml-0">
+            <div class="col-8">
+              <mat-form-field class="input-width">
+                <input matInput [placeholder]="'Request url'" formControlName="requestUrl" required>
+                <mat-error *ngIf="requestUrl.hasError('required')">
+                  emty field is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row mr-0 ml-0">
+            <div class="col-4">
+              Request body fit:
+              <mat-radio-group formControlName="fullBodyFit">
+                <mat-radio-button [value]="true">full</mat-radio-button>
+                <mat-radio-button class="ml-2" [value]="false">part</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+          <div class="row mr-0 ml-0">
+            <div class="col-8">
+              <mat-form-field class="input-width">
+                <textarea rows="6" matInput [placeholder]="'Request body'" formControlName="requestBody" ></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+        <div class="form-group">
+          <h4>Choose mock</h4>
+
+          <div class="row mr-0 ml-0">
+            <div class="col-5">
+              <mat-form-field class="input-width">
+                <mat-select [formControl]="mockId" [placeholder]="'Mock'" name="mockId">
+                  <mat-option value="{{mock.id}}" *ngFor="let mock of mocks">{{mock.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row mr-0 ml-0">
+            <div class="col-3">
+              <mat-form-field class="input-width">
+                <input matInput type="number" [placeholder]="'Time wait response in sec'" formControlName="timeWait">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+
+        <hr>
+
+        <div class="row mr-0 ml-0 justify-content-end">
+          <div class="col-4 save-buttons-place">
+            <button mat-button (click)="cancel(); false">
+              Cancel
+            </button>
+            <button #submitButton [disabled]="!editForm.valid" type="submit" mat-flat-button color="primary">
+              {{selectedRule?.id ? 'Update':'Create'}}
+            </button>
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

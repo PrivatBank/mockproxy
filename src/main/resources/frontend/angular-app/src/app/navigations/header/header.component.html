@@ -1,0 +1,26 @@
+<header>
+  <nav class="navbar navbar-light border-bottom">
+
+    <span class="navbar-brand mb-0 h1">
+      <span class="iconMP">MP</span>
+       MockProxy
+    </span>
+
+    <div class="form-inline main-icons-place">
+
+      <button class="btn my-2 my-sm-0" [matMenuTriggerFor]="menu" >
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+        <defs>
+        <path id="a" d="M12 24C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12zm0-20.4a3.595 3.595 0 0 0-3.6 3.6c0 1.992 1.608 3.6 3.6 3.6s3.6-1.608 3.6-3.6-1.608-3.6-3.6-3.6zm0 17.04c3 0 5.652-1.536 7.2-3.864-.036-2.388-4.812-3.696-7.2-3.696-2.4 0-7.164 1.308-7.2 3.696A8.64 8.64 0 0 0 12 20.64z"/>
+        </defs>
+        <use fill="#000" fill-opacity=".5" fill-rule="evenodd" xlink:href="#a"/>
+        </svg>
+      </button>
+
+      <mat-menu #menu="matMenu" xPosition="before" yPosition="below">
+        <div class="fio">{{fio}}</div>
+        <button mat-menu-item><a href="logout">Выход</a></button>
+      </mat-menu>
+    </div>
+  </nav>
+</header>

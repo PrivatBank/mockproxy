@@ -1,0 +1,44 @@
+<mat-drawer-container class="sidenav-container"  autosize>
+  <mat-drawer #sidenav class="my-sidenav" mode="side"  opened="true">
+
+
+    <mat-nav-list class="navlist main" role="list">
+      <a mat-list-item  >
+        <span style="white-space: nowrap">Project Name</span>
+      </a>
+
+      <a mat-list-item
+         [ngClass]="{'active-list-item': router.isActive('rules',false)}"
+         [routerLink]="['./rules']">
+                 <i class="material-icons text-white" > folder </i>
+        <span  style="white-space: nowrap">Rules</span>
+      </a>
+
+      <a mat-list-item
+         [ngClass]="{'active-list-item': router.isActive('mocks',false)}"
+         [routerLink]="['./mocks']" >
+        <i class="material-icons text-white" > folder </i>
+        <span  style="white-space: nowrap">Mocks</span>
+      </a>
+      <a mat-list-item
+         [ngClass]="{'active-list-item': router.isActive('/proxy',false)}"
+         [routerLink]="['./logs']" >
+        <i class="material-icons text-white" > folder </i>
+        <span  style="white-space: nowrap">Logs</span>
+      </a>
+      <a mat-list-item
+         [routerLink]="['/projects']" >
+        <i class="material-icons text-white"> arrow_back </i>
+        <span  style="white-space: nowrap">To All Projects</span>
+      </a>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="container-fluid pl-0 pr-0">
+      <router-outlet ></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
+

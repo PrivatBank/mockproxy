@@ -1,0 +1,23 @@
+.conteiner-my{
+  padding: 1rem 20rem 1rem 3rem;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+
+.input-width {
+  width: 100%;
+}
+
+.button-width {
+  width: 100%;
+  text-align: start;
+
+  span.icon {
+    font-size: 1em;
+    margin-right: 4px;
+    vertical-align: bottom;
+  }
+}
