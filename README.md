@@ -228,7 +228,7 @@ public class ApacheClientExample {
 
 - Spring Bean
 
-![spring-bean-scheme](./public/spring-bean-scheme.png)
+![spring-bean-scheme](./public/spring-bean-scheme.jpg)
 
 <details>
   <summary>Click to expand</summary>
